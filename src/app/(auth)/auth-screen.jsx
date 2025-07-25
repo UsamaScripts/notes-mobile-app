@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { View, Text, SafeAreaView, Image } from "react-native";
 import { ICONS } from "../../../assets/constants";
 import { useSelector, useDispatch } from "react-redux";
-import { setIsOnboarding } from "../../features/authSlice";
 import { Button } from "../../components/Button";
 import { router } from "expo-router";
 import BgCircle from "../../components/bg-circle";

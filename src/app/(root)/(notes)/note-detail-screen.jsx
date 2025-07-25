@@ -10,18 +10,10 @@ const NoteDetailScreen = () => {
 
   return (
     <SafeAreaView className="flex-1 bg-gray-100">
-      {/* Pass custom onPress to go back to notes list */}
-      <Header
-        title="Note Details"
-        onPress={() => router.replace("/(root)/(notes)/note-list-screen")}
+      <NoteDetail
+        title={decodeURIComponent(title)}
+        content={decodeURIComponent(content)}
       />
-
-      <ScrollView contentContainerStyle={{ padding: 16 }}>
-        <NoteDetail
-          title={decodeURIComponent(title)}
-          content={decodeURIComponent(content)}
-        />
-      </ScrollView>
     </SafeAreaView>
   );
 };
