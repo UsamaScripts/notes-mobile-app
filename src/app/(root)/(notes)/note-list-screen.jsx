@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   FlatList,
 } from "react-native";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Toast from "react-native-toast-message";
@@ -14,8 +14,14 @@ import { useGetNotesQuery, useDeleteNoteMutation } from "@/service/notesApi";
 import { Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import NoteCard from "../../../components/NoteCard";
-
+import { logout } from "@/features/authSlice";
 const NotesList = () => {
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
   const { token } = useSelector((state) => state.auth);
   const [page, setPage] = useState(1);
   const limit = 5;
@@ -155,6 +161,17 @@ const NotesList = () => {
         colors={["#4338ca", "#312e81"]}
         className="p-6 pb-8 rounded-b-3xl shadow-lg"
       >
+        <TouchableOpacity
+          onPress={handleLogout}
+          style={{
+            position: "absolute",
+            top: 20,
+            right: 20,
+            padding: 8,
+          }}
+        >
+          <Ionicons name="log-out-outline" size={24} color="#fff" />
+        </TouchableOpacity>
         <Text className="text-3xl text-white font-bold text-center tracking-wide">
           My Notes
         </Text>
