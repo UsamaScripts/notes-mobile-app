@@ -1,0 +1,31 @@
+{
+  "expo": {
+    "name": "note-app-mobile",
+    "slug": "note-app-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icons/facebook.png",
+    "userInterfaceStyle": "light",
+    "scheme": "/",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/icons/facebook.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icons/facebook.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/icons/facebook.png",
+      "bundler": "metro"
+    },
+    "plugins": ["expo-router"]
+  }
+}
