@@ -16,7 +16,7 @@ export const notesApi = createApi({
   tagTypes: ["Notes"],
   endpoints: (builder) => ({
     getNotes: builder.query({
-      query: ({ page = 1, limit = 10 } = {}) =>
+      query: ({ page = 1, limit = 5 } = {}) =>
         `notes?page=${page}&limit=${limit}`,
       providesTags: (result) =>
         result?.notes
